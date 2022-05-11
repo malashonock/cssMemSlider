@@ -10,16 +10,33 @@
 </head>
 <body>
   <main class="slider">
+    <input type="radio" class="slider__slide-selector" name="slide-selector" id="meme-1" checked>
+    <input type="radio" class="slider__slide-selector" name="slide-selector" id="meme-2">
+    <input type="radio" class="slider__slide-selector" name="slide-selector" id="meme-3">
+
     <div class="slider__slides">
+      <div class="slider__slide first">
+        <img src="./assets/meme-1.jpg" alt="meme-1">
+      </div>
       <div class="slider__slide">
-        <img src="./assets/meme-1.jpg" alt="meme #1">
+        <img src="./assets/meme-2.jpg" alt="meme-2">
+      </div>
+      <div class="slider__slide">
+        <img src="./assets/meme-3.jpeg" alt="meme-3">
       </div>
     </div>
+
     <div class="slider__controls">
-      <div class="slider__caption">О пользе профессии DevOps</div>
+      <div class="slider__caption caption">
+        <div class="caption__option first">Все работы хороши, выбирай на вкус</div>
+        <div class="caption__option">Не имей 100 рублей, а имей 100 друзей</div>
+        <div class="caption__option">Плох тот джун, что не мечтает стать тимлидом</div>
+      </div>
+
       <div class="slider__pagination pagination">
-        <a href="#meme-1" class="pagination__button"><div class="pagination__bullet" id="meme-1"></div></a>
-        <a href="#meme-2" class="pagination__button"><div class="pagination__bullet" id="meme-2"></div></a>
+        <label for="meme-1" class="pagination__button"><div class="pagination__bullet"></div></label>
+        <label for="meme-2" class="pagination__button"><div class="pagination__bullet"></div></label>
+        <label for="meme-3" class="pagination__button"><div class="pagination__bullet"></div></label>
       </div>
     </div>
   </main>

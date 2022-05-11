@@ -29,22 +29,32 @@ body {
   padding: 20px;
 }
 
+.slider__slide-selector {
+  width: 0;
+  height: 0;
+}
+
 .slider__slides {
   width: 100%;
   height: var(--slide-height-ratio);
+  display: flex;
+  flex-direction: row;
   overflow: hidden;
 }
 
 .slider__slide {
-  width: 100%;
+  flex: 0 0 100%;
   height: 100%;
+  transition: margin 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slider__slide img {
   display: block;
   max-width: 100%;
   max-height: 100%;
-  margin: 0 auto;
 }
 
 .slider__controls {
@@ -58,6 +68,17 @@ body {
   align-self: center;
 }
 
+.slider__caption {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.caption__option {
+  flex: 0 0 100%;
+  transition: margin 0.2s ease;
+}
+
 .slider__pagination {
   display: flex;
   flex-direction: row;
@@ -69,6 +90,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .pagination__bullet {
@@ -81,17 +103,45 @@ body {
   transition: all 0.2s ease;
 }
 
-.pagination__bullet:hover {
+.pagination__button:hover .pagination__bullet {
   --bullet-color: white;
   transition: all 0.2s ease;
 }
 
-.pagination__bullet:active {
+.pagination__button:active .pagination__bullet {
   --bullet-color: lightgray;
   transition: all 0.2s ease;
 }
 
-.pagination__bullet:target {
+/* Navigate to the selected slide & caption */
+#meme-1:checked~.slider__slides .first,
+#meme-1:checked~.slider__controls .slider__caption .first {
+  margin-left: calc(-100% * 0);
+}
+
+#meme-2:checked~.slider__slides .first,
+#meme-2:checked~.slider__controls .slider__caption .first {
+  margin-left: calc(-100% * 1);
+}
+
+#meme-3:checked~.slider__slides .first,
+#meme-3:checked~.slider__controls .slider__caption .first {
+  margin-left: calc(-100% * 2);
+}
+
+/* Style the selected pagination bullet */
+#meme-1:checked~.slider__controls .pagination__button[for="meme-1"] .pagination__bullet {
   background-color: transparent;
-  transition: all 0.2s ease;
+}
+
+#meme-2:checked~.slider__controls .pagination__button[for="meme-2"] .pagination__bullet {
+  background-color: transparent;
+}
+
+#meme-3:checked~.slider__controls .pagination__button[for="meme-3"] .pagination__bullet {
+  background-color: transparent;
+}
+
+.slider__slides::-webkit-scrollbar {
+  display: none;
 }
