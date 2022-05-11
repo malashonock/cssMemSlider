@@ -5,9 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Meme Slider</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  
+  <main class="slider">
+    <div class="slider__slides">
+      <div class="slider__slide">
+        <img src="./assets/meme-1.jpg" alt="meme #1">
+      </div>
+    </div>
+    <div class="slider__controls">
+      <div class="slider__caption">О пользе профессии DevOps</div>
+      <div class="slider__pagination pagination">
+        <a href="#meme-1" class="pagination__button"><div class="pagination__bullet" id="meme-1"></div></a>
+        <a href="#meme-2" class="pagination__button"><div class="pagination__bullet" id="meme-2"></div></a>
+      </div>
+    </div>
+  </main>
 </body>
 </html>

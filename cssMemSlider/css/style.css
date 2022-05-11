@@ -1,0 +1,97 @@
+:root {
+  --background-color: #373737;
+  --text-color: white;
+  --slide-height-ratio: 75%;
+  --pagination-button-size: 4rem;
+  --pagination-bullet-size: 2rem;
+  font-size: 10px;
+}
+
+:root * {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+}
+
+.slider {
+  width: 100%;
+  max-width: 1024px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.slider__slides {
+  width: 100%;
+  height: var(--slide-height-ratio);
+  overflow: hidden;
+}
+
+.slider__slide {
+  width: 100%;
+  height: 100%;
+}
+
+.slider__slide img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+}
+
+.slider__controls {
+  height: calc(100% - var(--slide-height-ratio));
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.slider__controls > * {
+  align-self: center;
+}
+
+.slider__pagination {
+  display: flex;
+  flex-direction: row;
+}
+
+.pagination__button {
+  width: var(--pagination-button-size);
+  height: var(--pagination-button-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination__bullet {
+  --bullet-color: #0078d4;
+  width: var(--pagination-bullet-size);
+  height: var(--pagination-bullet-size);
+  background-color: var(--bullet-color);
+  border: 3px solid var(--bullet-color);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.pagination__bullet:hover {
+  --bullet-color: white;
+  transition: all 0.2s ease;
+}
+
+.pagination__bullet:active {
+  --bullet-color: lightgray;
+  transition: all 0.2s ease;
+}
+
+.pagination__bullet:target {
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
