@@ -2,6 +2,7 @@
   --background-color: #373737;
   --text-color: white;
   --slide-height-ratio: 75%;
+  --padding: 2rem;
   --pagination-button-size: 4rem;
   --pagination-bullet-size: 2rem;
   font-size: 10px;
@@ -26,7 +27,8 @@ body {
   max-width: 1024px;
   height: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: var(--padding);
+  /* overflow: hidden; */
 }
 
 .slider__slide-selector {
@@ -58,7 +60,7 @@ body {
 }
 
 .slider__controls {
-  height: calc(100% - var(--slide-height-ratio));
+  height: calc(100% - 2 * var(--padding) - var(--slide-height-ratio));
   display: flex;
   flex-direction: row;
   justify-content: space-between;
