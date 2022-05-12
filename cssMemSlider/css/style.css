@@ -26,7 +26,7 @@ body {
   max-width: 1024px;
   height: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 2rem;
 }
 
 .slider__slide-selector {
@@ -144,4 +144,20 @@ body {
 
 .slider__slides::-webkit-scrollbar {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .slider__controls {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    row-gap: 2rem;
+  }
+
+  .slider__pagination {
+    margin-top: 2rem;
+  }
+
+  .caption__option {
+    text-align: center;
+  }
 }
