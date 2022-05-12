@@ -3,7 +3,7 @@
   --text-color: white;
   --slide-height-ratio: 75%;
   --padding: 2rem;
-  --pagination-button-size: 4rem;
+  --pagination-button-size: 3.5rem;
   --pagination-bullet-size: 2rem;
   font-size: 10px;
 }
@@ -17,7 +17,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 500;
   letter-spacing: 0.05rem;
 }
@@ -74,16 +74,21 @@ body {
   display: flex;
   flex-direction: row;
   overflow: hidden;
+  align-items: center;
 }
 
 .caption__option {
   flex: 0 0 100%;
+  max-width: 100%;
   transition: margin 0.2s ease;
 }
 
 .slider__pagination {
+  min-width: 45%;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .pagination__button {
@@ -131,6 +136,51 @@ body {
   margin-left: calc(-100% * 2);
 }
 
+#meme-4:checked~.slider__slides .first,
+#meme-4:checked~.slider__controls .slider__caption .first {
+  margin-left: calc(-100% * 3);
+}
+
+#meme-5:checked~.slider__slides .first,
+#meme-5:checked~.slider__controls .slider__caption .first {
+  margin-left: calc(-100% * 4);
+}
+
+#meme-6:checked~.slider__slides .first,
+#meme-6:checked~.slider__controls .slider__caption .first {
+  margin-left: calc(-100% * 5);
+}
+
+#meme-7:checked~.slider__slides .first,
+#meme-7:checked~.slider__controls .slider__caption .first {
+  margin-left: calc(-100% * 6);
+}
+
+#meme-8:checked~.slider__slides .first,
+#meme-8:checked~.slider__controls .slider__caption .first {
+  margin-left: calc(-100% * 7);
+}
+
+#meme-9:checked~.slider__slides .first,
+#meme-9:checked~.slider__controls .slider__caption .first {
+  margin-left: calc(-100% * 8);
+}
+
+#meme-10:checked~.slider__slides .first,
+#meme-10:checked~.slider__controls .slider__caption .first {
+  margin-left: calc(-100% * 9);
+}
+
+#meme-11:checked~.slider__slides .first,
+#meme-11:checked~.slider__controls .slider__caption .first {
+  margin-left: calc(-100% * 10);
+}
+
+#meme-12:checked~.slider__slides .first,
+#meme-12:checked~.slider__controls .slider__caption .first {
+  margin-left: calc(-100% * 11);
+}
+
 /* Style the selected pagination bullet */
 #meme-1:checked~.slider__controls .pagination__button[for="meme-1"] .pagination__bullet {
   background-color: transparent;
@@ -144,15 +194,55 @@ body {
   background-color: transparent;
 }
 
-.slider__slides::-webkit-scrollbar {
-  display: none;
+#meme-4:checked~.slider__controls .pagination__button[for="meme-4"] .pagination__bullet {
+  background-color: transparent;
+}
+
+#meme-5:checked~.slider__controls .pagination__button[for="meme-5"] .pagination__bullet {
+  background-color: transparent;
+}
+
+#meme-6:checked~.slider__controls .pagination__button[for="meme-6"] .pagination__bullet {
+  background-color: transparent;
+}
+
+#meme-7:checked~.slider__controls .pagination__button[for="meme-7"] .pagination__bullet {
+  background-color: transparent;
+}
+
+#meme-8:checked~.slider__controls .pagination__button[for="meme-8"] .pagination__bullet {
+  background-color: transparent;
+}
+
+#meme-9:checked~.slider__controls .pagination__button[for="meme-9"] .pagination__bullet {
+  background-color: transparent;
+}
+
+#meme-10:checked~.slider__controls .pagination__button[for="meme-10"] .pagination__bullet {
+  background-color: transparent;
+}
+
+#meme-11:checked~.slider__controls .pagination__button[for="meme-11"] .pagination__bullet {
+  background-color: transparent;
+}
+
+#meme-12:checked~.slider__controls .pagination__button[for="meme-12"] .pagination__bullet {
+  background-color: transparent;
 }
 
 @media (max-width: 768px) {
+  :root {
+    --slide-height-ratio: 50%;
+  }
+
   .slider__controls {
     flex-direction: column-reverse;
     justify-content: flex-end;
     row-gap: 2rem;
+  }
+
+  .slider__controls > * {
+    width: 100%;
   }
 
   .slider__pagination {
